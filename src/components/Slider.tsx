@@ -14,7 +14,7 @@ const Slider = ({ imgArray, thumbArray, setIsGallery }: SliderProps) => {
   return (
     <section className='relative lg:flex lg:flex-col lg:gap-8'>
         <article className='cursor-pointer' onClick={() => setIsGallery(true)}>
-            <img src={imgArray[current]} alt="Product Image" className='max-w-[450px] mx-auto sm:rounded-lg' />
+            <img src={imgArray[current]} alt="Product Image" className='sm:max-w-[450px] sm:mx-auto sm:rounded-lg' />
         </article>
 
         <article className='hidden lg:grid grid-flow-col gap-4 w-full'>

@@ -18,12 +18,19 @@ function App() {
         <MobileNav isNav={isNav} setIsNav={setIsNav}/>
       </header>
 
-      <main className='flex flex-col lg:grid lg:grid-cols-2 lg:py-10 lg:px-16 lg:items-center lg:gap-10 xl:px-24 xl:gap-16'>
+      <main className='flex flex-col lg:grid lg:grid-cols-2 pb-4 lg:py-10 lg:px-16 lg:items-center lg:gap-10 xl:px-24 xl:gap-16'>
         <Slider imgArray={product.images} thumbArray={product.thumbnails} setIsGallery={setIsGallery} />
         {isGallery && <Gallery imgArray={product.images} thumbArray={product.thumbnails} setIsGallery={setIsGallery} />}
         
         <ProductInfo product={product} />
       </main>
+
+      <footer className='fixed left-0 bottom-0 w-full'>
+        <div className="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="https://github.com/Dev-Dylann/">DevDylan</a>.
+        </div>
+      </footer>
     </>
   )
 }
