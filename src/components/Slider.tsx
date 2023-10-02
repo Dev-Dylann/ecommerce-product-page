@@ -14,7 +14,7 @@ const Slider = ({ imgArray, thumbArray, setIsGallery }: SliderProps) => {
   return (
     <section className='relative lg:flex lg:flex-col lg:gap-8'>
         <article className='cursor-pointer' onClick={() => setIsGallery(true)}>
-            <img src={imgArray[current]} alt="Product Image" className='lg:rounded-lg' />
+            <img src={imgArray[current]} alt="Product Image" className='max-w-[450px] mx-auto sm:rounded-lg' />
         </article>
 
         <article className='hidden lg:grid grid-flow-col gap-4 w-full'>
@@ -24,13 +24,13 @@ const Slider = ({ imgArray, thumbArray, setIsGallery }: SliderProps) => {
         </article>
 
         <div className='absolute top-0 left-5 h-full w-fit flex items-center sm:left-7 md:left-10 lg:hidden'>
-            <button onClick={() => setCurrent(prev => prev - 1)} disabled={current === 0} className='bg-white h-10 w-10 grid place-content-center rounded-full p-4 disabled:bg-gray-400'>
+            <button onClick={() => setCurrent(prev => prev - 1)} disabled={current === 0} className='bg-white h-10 w-10 grid place-content-center rounded-full p-4 disabled:bg-blue-gray shadow-xl'>
                 <img src={prevArrow} alt="Previous" />
             </button>
         </div>
 
         <div className='absolute top-0 right-5 h-full w-fit flex items-center sm:right-7 md:right-10 lg:hidden'>
-            <button onClick={() => setCurrent(prev => prev + 1)} disabled={current === imgArray.length - 1} className='bg-white h-10 w-10 grid place-content-center rounded-full p-4 disabled:bg-gray-400'>
+            <button onClick={() => setCurrent(prev => prev + 1)} disabled={current === imgArray.length - 1} className='bg-white h-10 w-10 grid place-content-center rounded-full p-4 disabled:bg-blue-gray shadow-xl'>
                 <img src={nextArrow} alt="Next" />
             </button>
         </div>

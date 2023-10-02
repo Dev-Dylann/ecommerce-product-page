@@ -21,11 +21,11 @@ const Gallery = ({imgArray, thumbArray, setIsGallery}: GalleryProps) => {
 
             <img src={imgArray[current]} alt="Gallery Preview" className='rounded-lg' />
 
-            <button onClick={() => setCurrent(prev => prev - 1)} disabled={current === 0} className='bg-white h-10 w-10 grid place-content-center rounded-full p-4 disabled:bg-gray-400 absolute inset-0 -left-5 my-auto'>
+            <button onClick={() => setCurrent(prev => prev - 1)} disabled={current === 0} className='bg-white h-10 w-10 grid place-content-center rounded-full p-4 disabled:bg-blue-gray shadow-xl absolute inset-0 -left-5 my-auto'>
                 <img src={prevArrow} alt="Previous" />
             </button>
 
-            <button onClick={() => setCurrent(prev => prev + 1)} disabled={current === imgArray.length - 1} className='bg-white h-10 w-10 grid place-content-center rounded-full p-4 disabled:bg-gray-400 absolute left-[calc(100%_-_20px)] my-auto inset-0'>
+            <button onClick={() => setCurrent(prev => prev + 1)} disabled={current === imgArray.length - 1} className='bg-white h-10 w-10 grid place-content-center rounded-full p-4 disabled:bg-blue-gray shadow-xl absolute left-[calc(100%_-_20px)] my-auto inset-0'>
                 <img src={nextArrow} alt="Next" />
             </button>
         </article>

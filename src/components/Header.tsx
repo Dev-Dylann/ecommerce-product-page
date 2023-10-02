@@ -20,8 +20,6 @@ const Header = ({setIsNav}: HeaderProps) => {
     const navArray = ['Collection', 'Men', 'Women', 'About', 'Contact']
 
     useEffect(() => {
-        console.log(isOpen) 
-        
         if (isOpen) {
             dialogRef.current?.show()
             dialogRef.current?.classList.add('md:flex')
@@ -36,14 +34,13 @@ const Header = ({setIsNav}: HeaderProps) => {
 
         cartItems.forEach(item => {
             newCartCount += item.count
-            console.log(newCartCount)
         })
 
         setCartCount(newCartCount)
     }, [cartItems])
 
   return (
-    <section className='flex items-center p-4 gap-3 sm:px-7 sm:py-5 sm:gap-5 md:px-10 md:py-7 lg:gap-10 lg:p-0'>
+    <section className='flex items-center p-4 gap-3 sm:px-7 sm:py-5 sm:gap-5 md:px-10 md:py-7 lg:gap-10 lg:py-0 xl:px-0'>
         <button className='p-2 lg:hidden' onClick={() => setIsNav(prev => !prev)}>
             <img src={menuBars} alt="Menu Icon" />
         </button>
