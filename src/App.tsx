@@ -5,9 +5,11 @@ import Header from './components/Header'
 import Slider from './components/Slider'
 import ProductInfo from './components/ProductInfo'
 import MobileNav from './components/MobileNav'
+import Gallery from './components/Gallery'
 
 function App() {
   const [isNav, setIsNav] = useState(false)
+  const [isGallery, setIsGallery] = useState(false)
   
   return (
     <>
@@ -16,8 +18,9 @@ function App() {
         <MobileNav isNav={isNav} setIsNav={setIsNav}/>
       </header>
 
-      <main className='flex flex-col lg:flex-row lg:p-10'>
-        <Slider imgArray={product.images} />
+      <main className='flex flex-col lg:grid lg:grid-cols-2 lg:py-10 lg:px-16 lg:items-center lg:gap-10 xl:px-24 xl:gap-16'>
+        <Slider imgArray={product.images} thumbArray={product.thumbnails} setIsGallery={setIsGallery} />
+        {isGallery && <Gallery imgArray={product.images} thumbArray={product.thumbnails} setIsGallery={setIsGallery} />}
         
         <ProductInfo product={product} />
       </main>

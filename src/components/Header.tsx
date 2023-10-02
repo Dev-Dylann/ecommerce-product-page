@@ -68,8 +68,8 @@ const Header = ({setIsNav}: HeaderProps) => {
             )}
         </button>
 
-        <dialog ref={dialogRef} className='w-full px-3 top-20 z-10 bg-transparent sm:px-7 md:px-10 md:top-24 md:justify-end'>
-            <section className='flex flex-col bg-white rounded-md md:w-2/3 md:max-w-[450px] lg:max-w-[500px] shadow-2xl'>
+        <dialog ref={dialogRef} className='w-full px-3 top-20 z-10 bg-transparent sm:px-7 md:px-10 md:top-24 md:justify-end max-w-7xl'>
+            <section className='flex flex-col bg-white rounded-md md:w-2/3 md:max-w-[450px] lg:max-w-[500px] shadow-2xl xl:max-w-[450px]'>
                 <h3 className='font-bold text-lg p-5 border-b border-blue-gray sm:text-xl sm:px-7'>Cart</h3>
 
                 <article className='p-5 flex flex-col gap-4 sm:p-7'>
@@ -80,7 +80,7 @@ const Header = ({setIsNav}: HeaderProps) => {
                                 <li key={`cartItem${i}`} className='grid grid-cols-5 gap-2 items-center text-blue-darkGray'>
                                     <img src={item.thumbnail} alt={item.name} className='rounded-md w-[90%]' />
 
-                                    <div className='flex flex-col gap-1 col-span-3 sm:text-lg md:text-base lg:text-lg'>
+                                    <div className='flex flex-col gap-1 col-span-3 sm:text-lg md:text-base lg:text-lg xl:text-base'>
                                         <p className=''>{item.name}</p>
 
                                         <p>${item.price.toFixed(2)} &times; {item.count} <span className='text-blue-dark font-bold ml-1'>${item.total.toFixed(2)}</span></p>

@@ -4,15 +4,23 @@ import nextArrow from '../assets/icons/icon-next.svg'
 
 type SliderProps = {
     imgArray: string[],
+    thumbArray: string[],
+    setIsGallery: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Slider = ({ imgArray }: SliderProps) => {
+const Slider = ({ imgArray, thumbArray, setIsGallery }: SliderProps) => {
     const [current, setCurrent] = useState<number>(0)
 
   return (
-    <section className='relative'>
-        <article className=''>
-            <img src={imgArray[current]} alt="Product Image" />
+    <section className='relative lg:flex lg:flex-col lg:gap-8'>
+        <article className='' onClick={() => setIsGallery(true)}>
+            <img src={imgArray[current]} alt="Product Image" className='lg:rounded-lg' />
+        </article>
+
+        <article className='hidden lg:grid grid-flow-col gap-4 w-full'>
+            {thumbArray.map((item, index) => (
+                <img key={`thumb${index}`} src={item} alt={`Thumbnail ${index + 1}`} className='rounded-md' onClick={() => setCurrent(index)} />
+            ))}
         </article>
 
         <div className='absolute top-0 left-5 h-full w-fit flex items-center sm:left-7 md:left-10 lg:hidden'>
@@ -26,6 +34,7 @@ const Slider = ({ imgArray }: SliderProps) => {
                 <img src={nextArrow} alt="Next" />
             </button>
         </div>
+
     </section>
   )
 }
