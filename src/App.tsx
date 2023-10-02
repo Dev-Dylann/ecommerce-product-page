@@ -13,7 +13,7 @@ function App() {
   
   return (
     <>
-      <header>
+      <header className='border-b border-blue-lightGray'>
         <Header setIsNav={setIsNav} />
         <MobileNav isNav={isNav} setIsNav={setIsNav}/>
       </header>

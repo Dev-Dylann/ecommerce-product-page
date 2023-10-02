@@ -32,7 +32,7 @@ const Gallery = ({imgArray, thumbArray, setIsGallery}: GalleryProps) => {
 
         <article className='lg:grid grid-flow-col gap-4 w-1/2 max-w-[450px] xl:gap-8'>
             {thumbArray.map((item, index) => (
-                <img key={`galleryThumb${index}`} src={item} alt={`Gallery Thumbnail ${index + 1}`} className='rounded-md' onClick={() => setCurrent(index)} />
+                <img key={`galleryThumb${index}`} src={item} alt={`Gallery Thumbnail ${index + 1}`} className='rounded-md hover:scale-105 transition-transform cursor-pointer' style={current === index ? {outline: '3px solid hsl(26, 100%, 55%)', transform: 'scale(1.05)'} : {}} onClick={() => setCurrent(index)} />
             ))}
         </article>
     </section>

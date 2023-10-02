@@ -13,13 +13,13 @@ const Slider = ({ imgArray, thumbArray, setIsGallery }: SliderProps) => {
 
   return (
     <section className='relative lg:flex lg:flex-col lg:gap-8'>
-        <article className='' onClick={() => setIsGallery(true)}>
+        <article className='cursor-pointer' onClick={() => setIsGallery(true)}>
             <img src={imgArray[current]} alt="Product Image" className='lg:rounded-lg' />
         </article>
 
         <article className='hidden lg:grid grid-flow-col gap-4 w-full'>
             {thumbArray.map((item, index) => (
-                <img key={`thumb${index}`} src={item} alt={`Thumbnail ${index + 1}`} className='rounded-md' onClick={() => setCurrent(index)} />
+                <img key={`thumb${index}`} src={item} alt={`Thumbnail ${index + 1}`} className='rounded-md transition-transform hover:scale-105 cursor-pointer' style={current === index ? {outline: '3px solid hsl(26, 100%, 55%)', transform: 'scale(1.05)'} : {}} onClick={() => setCurrent(index)} />
             ))}
         </article>
 

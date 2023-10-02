@@ -17,6 +17,8 @@ const Header = ({setIsNav}: HeaderProps) => {
     const [cartCount, setCartCount] = useState(0)
     const [isOpen, setIsOpen] = useState(false)
 
+    const navArray = ['Collection', 'Men', 'Women', 'About', 'Contact']
+
     useEffect(() => {
         console.log(isOpen) 
         
@@ -41,22 +43,20 @@ const Header = ({setIsNav}: HeaderProps) => {
     }, [cartItems])
 
   return (
-    <section className='flex items-center p-4 gap-3 sm:px-7 sm:py-5 sm:gap-5 md:px-10 md:py-7 lg:gap-10'>
+    <section className='flex items-center p-4 gap-3 sm:px-7 sm:py-5 sm:gap-5 md:px-10 md:py-7 lg:gap-10 lg:p-0'>
         <button className='p-2 lg:hidden' onClick={() => setIsNav(prev => !prev)}>
             <img src={menuBars} alt="Menu Icon" />
         </button>
 
-        <div className='grow lg:grow-0'>
+        <div className='grow lg:grow-0 lg:py-7'>
             <img src={logo} alt="sneakers Logo" className='' />
         </div>
 
-        <nav aria-label='Desktop Nav' className='hidden lg:block grow'>
-            <ul className='flex gap-4 text-blue-darkGray'>
-                <li className='hover:text-black cursor-pointer'>Collections</li>
-                <li>Men</li>
-                <li>Women</li>
-                <li>About</li>
-                <li>Contact</li>
+        <nav aria-label='Desktop Nav' className='hidden lg:block grow xl:px-6'>
+            <ul className='flex gap-4 text-blue-darkGray xl:gap-8'>
+                {navArray.map((item, index) => (
+                    <li key={`navItem${index}`} className='hover:text-black cursor-pointer relative before:absolute before:-bottom-7 before:left-0 before:w-full before:h-1 before:bg-orange before:scale-0 hover:before:scale-100 before:transition-all before:rounded-t-md'>{item}</li>
+                ))}
             </ul>
         </nav>
 
@@ -104,7 +104,7 @@ const Header = ({setIsNav}: HeaderProps) => {
 
         </dialog>
 
-        <img src={avatarImg} alt="Avatar Image" height="100" width="100" className='rounded-full w-8 lg:w-12 hover:ring hover:ring-orange' />
+        <img src={avatarImg} alt="Avatar Image" height="100" width="100" className='rounded-full w-8 lg:w-12 hover:ring hover:ring-orange cursor-pointer' />
 
     </section>
   )
