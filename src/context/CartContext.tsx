@@ -9,8 +9,8 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | undefined>({
     cartItems: [] as CartType[],
-    addToCart: (product: ProductType, count: number, price: number) => {},
-    deleteFromCart: (id: number) => {}
+    addToCart: (product: ProductType, count: number, price: number) => {console.log([product, count, price])},
+    deleteFromCart: (id: number) => {console.log(id)}
 })
 
 type CartProviderProps = {
