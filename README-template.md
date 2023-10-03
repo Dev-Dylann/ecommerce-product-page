@@ -47,7 +47,7 @@ Users should be able to:
 
 ### What I learned
 
-Learnt how to use the React's Context API properly with Typescript.
+Learnt how to use React's Context API properly with Typescript.
 
 ## Author
 
