@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [View Code](https://github.com/Dev-Dylann/ecommerce-product-page)
+- Solution URL: [View Solution](https://www.frontendmentor.io/solutions/ecommerce-product-page-built-with-typescript-and-react-cR42zrrQxW)
 - Live Site URL: [View Live](https://devdylann-ecommerce-product-page.netlify.app)
 
 ## My process
